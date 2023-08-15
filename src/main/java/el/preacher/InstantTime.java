@@ -67,4 +67,13 @@ public class InstantTime {
             }
         }
     }
+
+    public int getDayOfMonth(Instant instant){
+        if (instant == null)
+            return -1;
+        return Integer.parseInt(
+                instant.toString()
+                        .substring(8, 10)
+        );
+    }
 }
