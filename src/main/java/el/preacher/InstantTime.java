@@ -4,22 +4,21 @@ import java.time.Instant;
 
 public class InstantTime {
 
-    public int getYear(Instant instant){
+    private int get(Instant instant, int  beginIndex, int endIndex){
         if (instant == null)
             return -1;
         return Integer.parseInt(
                 instant.toString()
-                        .substring(0, 4)
+                        .substring(beginIndex, endIndex)
         );
     }
 
+    public int getYear(Instant instant){
+        return get(instant, 0, 4);
+    }
+
     public int getMonthValue(Instant instant){
-        if (instant == null)
-            return -1;
-        return Integer.parseInt(
-                instant.toString()
-                        .substring(5, 7)
-        );
+        return get(instant, 5, 7);
     }
 
     public String getMonth(Instant instant){
@@ -69,11 +68,6 @@ public class InstantTime {
     }
 
     public int getDayOfMonth(Instant instant){
-        if (instant == null)
-            return -1;
-        return Integer.parseInt(
-                instant.toString()
-                        .substring(8, 10)
-        );
+        return get(instant, 8, 10);
     }
 }
