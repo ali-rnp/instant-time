@@ -4,7 +4,7 @@ import java.time.Instant;
 
 public class InstantTime {
 
-    private int get(Instant instant, int  beginIndex, int endIndex){
+    private int get(Instant instant, int beginIndex, int endIndex) {
         if (instant == null)
             return -1;
         return Integer.parseInt(
@@ -13,61 +13,62 @@ public class InstantTime {
         );
     }
 
-    public int getYear(Instant instant){
+    public int getYear(Instant instant) {
         return get(instant, 0, 4);
     }
 
-    public int getMonthValue(Instant instant){
+    public int getMonthValue(Instant instant) {
         return get(instant, 5, 7);
     }
 
-    public String getMonth(Instant instant){
+    public int getDayOfMonth(Instant instant) {
+        return get(instant, 8, 10);
+    }
+
+    public String getMonth(Instant instant) {
         if (instant == null)
             return "";
         switch (getMonthValue(instant)) {
-            case (1) : {
+            case (1): {
                 return "JANUARY";
             }
-            case (2) : {
+            case (2): {
                 return "FEBRUARY";
             }
-            case (3) : {
+            case (3): {
                 return "MARCH";
             }
-            case (4) : {
+            case (4): {
                 return "APRIL";
             }
-            case (5) : {
+            case (5): {
                 return "MAY";
             }
-            case (6) : {
+            case (6): {
                 return "JUNE";
             }
-            case (7) : {
+            case (7): {
                 return "JULY";
             }
-            case (8) : {
+            case (8): {
                 return "AUGUST";
             }
-            case (9) : {
+            case (9): {
                 return "SEPTEMBER";
             }
-            case (10) : {
+            case (10): {
                 return "OCTOBER";
             }
-            case (11) : {
+            case (11): {
                 return "NOVEMBER";
             }
-            case (12) : {
+            case (12): {
                 return "DECEMBER";
             }
-            default : {
+            default: {
                 return "";
             }
         }
     }
 
-    public int getDayOfMonth(Instant instant){
-        return get(instant, 8, 10);
-    }
 }
